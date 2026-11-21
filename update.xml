@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
     <update>
-        <name>VM Payment - Orboni</name>
+        <name>Orboni for VirtueMart</name>
         <description>Crypto payments for VirtueMart through Orboni</description>
         <element>orboni</element>
         <type>plugin</type>
         <folder>vmpayment</folder>
         <client>site</client>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <infourl title="Orboni for VirtueMart">https://orboni.com/docs/virtuemart</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/orboni/virtuemart-payment/releases/download/v1.0.0/plg_vmpayment_orboni.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/orboni/virtuemart-payment/releases/download/v1.0.1/plg_vmpayment_orboni.zip</downloadurl>
         </downloads>
         <maintainer>Orboni</maintainer>
         <maintainerurl>https://orboni.com</maintainerurl>

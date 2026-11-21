@@ -9,8 +9,8 @@ Crypto payments for VirtueMart through [Orboni](https://orboni.com): buyers pay 
 ## Install
 
 1. Download `plg_vmpayment_orboni.zip` from the [latest release](https://github.com/orboni/virtuemart-payment/releases/latest).
-2. In Joomla, go to **System → Install → Extensions** and upload it. Joomla switches the plugin on by itself; if not, enable **VM Payment - Orboni** under **System → Manage → Plugins**.
-3. In **VirtueMart → Payment Methods**, add a method, name it (for example "Crypto (USDT, USDC, BTC and more)"), choose **VM Payment - Orboni** as the payment method, set it published, and press **Save**.
+2. In Joomla, go to **System → Install → Extensions** and upload it. Joomla switches the plugin on by itself; if not, enable **Orboni for VirtueMart** under **System → Manage → Plugins**.
+3. In **VirtueMart → Payment Methods**, add a method, name it (for example "Crypto (USDT, USDC, BTC and more)"), choose **Orboni for VirtueMart** as the payment method, set it published, and press **Save**.
 4. On its **Configuration** tab, paste your **Secret key** from the Orboni dashboard (Developers → API keys): `sk_test_…` to try it, `sk_live_…` for real payments. Save.
 5. In the Orboni dashboard, under **Developers → Webhooks**, add an endpoint with the **Webhook address** the Configuration tab shows, and paste its signing secret (`whsec_…`) into **Webhook signing secret**. Save.
 6. Optional but recommended: add the **Cron address** the Configuration tab shows under **System → Scheduled Tasks → New → GET Request**, every 15 minutes. It reads back payments still on their way in case a webhook was lost, and cancels orders whose payment page ran out unpaid.

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="plugin" group="vmpayment" method="upgrade">
-    <name>VM Payment - Orboni</name>
+    <name>Orboni for VirtueMart</name>
     <author>Orboni</author>
     <authorEmail>support@orboni.com</authorEmail>
     <authorUrl>https://orboni.com</authorUrl>
     <creationDate>2026-11-21</creationDate>
     <copyright>Copyright (C) 2026 Orboni</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE</license>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>PLG_VMPAYMENT_ORBONI_XML_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
 

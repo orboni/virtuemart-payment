@@ -21,7 +21,7 @@ use Joomla\Registry\Registry;
  */
 class Api
 {
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     const SESSION_ID = '/^cs_(live|test)_[A-Za-z0-9]+$/';
 
