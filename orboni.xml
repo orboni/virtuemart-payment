@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="vmpayment" method="upgrade">
+    <name>VM Payment - Orboni</name>
+    <author>Orboni</author>
+    <authorEmail>support@orboni.com</authorEmail>
+    <authorUrl>https://orboni.com</authorUrl>
+    <creationDate>2026-11-21</creationDate>
+    <copyright>Copyright (C) 2026 Orboni</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE</license>
+    <version>1.0.0</version>
+    <description>PLG_VMPAYMENT_ORBONI_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+
+    <files>
+        <filename plugin="orboni">orboni.php</filename>
+        <filename>LICENSE</filename>
+        <filename>README.md</filename>
+        <filename>script.php</filename>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <folder>lib</folder>
+    </files>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/fields">
+                <field name="checkConditionsCore" value="1" default="1" type="hidden"/>
+                <field name="secret_key" type="password" default="" size="60" autocomplete="off"
+                       label="PLG_VMPAYMENT_ORBONI_SECRET_KEY" description="PLG_VMPAYMENT_ORBONI_SECRET_KEY_TIP"/>
+                <field name="webhook_secret" type="password" default="" size="60" autocomplete="off"
+                       label="PLG_VMPAYMENT_ORBONI_WEBHOOK_SECRET" description="PLG_VMPAYMENT_ORBONI_WEBHOOK_SECRET_TIP"/>
+                <field name="orboni_addresses" type="orboniaddresses" addfieldpath="/plugins/vmpayment/orboni/fields"
+                       label="PLG_VMPAYMENT_ORBONI_ADDRESSES"/>
+                <field name="payment_currency" type="vmacceptedcurrency" default=""
+                       label="PLG_VMPAYMENT_ORBONI_CURRENCY" description="PLG_VMPAYMENT_ORBONI_CURRENCY_TIP"/>
+                <field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P"
+                       label="PLG_VMPAYMENT_ORBONI_STATUS_PENDING" description="PLG_VMPAYMENT_ORBONI_STATUS_PENDING_TIP"/>
+                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C"
+                       label="PLG_VMPAYMENT_ORBONI_STATUS_SUCCESS" description="PLG_VMPAYMENT_ORBONI_STATUS_SUCCESS_TIP"/>
+                <field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X"
+                       label="PLG_VMPAYMENT_ORBONI_STATUS_CANCELED" description="PLG_VMPAYMENT_ORBONI_STATUS_CANCELED_TIP"/>
+                <field name="debug" type="radio" default="0" layout="joomla.form.field.radio.switcher"
+                       label="PLG_VMPAYMENT_ORBONI_DEBUG" description="PLG_VMPAYMENT_ORBONI_DEBUG_TIP">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+            </fieldset>
+            <fieldset name="template">
+                <field name="payment_logos" type="vmfiles" multiple="true" directory="/images/virtuemart/payment"
+                       hide_none="1" label="PLG_VMPAYMENT_ORBONI_LOGOS" description="PLG_VMPAYMENT_ORBONI_LOGOS_TIP"/>
+                <field name="payment_info" type="textarea" cols="35" rows="5"
+                       label="PLG_VMPAYMENT_ORBONI_PAYMENT_INFO" description="PLG_VMPAYMENT_ORBONI_PAYMENT_INFO_TIP"/>
+            </fieldset>
+            <fieldset name="restrictions">
+                <field name="countries" multiple="true" type="vmcountries" scope="com_virtuemart" default=""
+                       label="PLG_VMPAYMENT_ORBONI_COUNTRIES" description="PLG_VMPAYMENT_ORBONI_COUNTRIES_TIP"/>
+                <field name="min_amount" type="text" label="PLG_VMPAYMENT_ORBONI_MIN_AMOUNT"
+                       description="PLG_VMPAYMENT_ORBONI_MIN_AMOUNT_TIP"/>
+                <field name="max_amount" type="text" label="PLG_VMPAYMENT_ORBONI_MAX_AMOUNT"
+                       description="PLG_VMPAYMENT_ORBONI_MAX_AMOUNT_TIP"/>
+            </fieldset>
+            <fieldset name="fee">
+                <field name="cost_per_transaction" type="text" label="PLG_VMPAYMENT_ORBONI_COST_PER_TRANSACTION"
+                       description="PLG_VMPAYMENT_ORBONI_COST_PER_TRANSACTION_TIP"/>
+                <field name="cost_min_transaction" type="text" label="PLG_VMPAYMENT_ORBONI_COST_MIN_TRANSACTION"
+                       description="PLG_VMPAYMENT_ORBONI_COST_MIN_TRANSACTION_TIP"/>
+                <field name="cost_percent_total" type="text" label="PLG_VMPAYMENT_ORBONI_COST_PERCENT_TOTAL"
+                       description="PLG_VMPAYMENT_ORBONI_COST_PERCENT_TOTAL_TIP"/>
+                <field name="tax_id" type="vmtaxes" scope="com_virtuemart" label="PLG_VMPAYMENT_ORBONI_TAX"
+                       description="PLG_VMPAYMENT_ORBONI_TAX_TIP"/>
+            </fieldset>
+        </fields>
+    </vmconfig>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Orboni for VirtueMart">https://raw.githubusercontent.com/orboni/virtuemart-payment/main/update.xml</server>
+    </updateservers>
+</extension>
